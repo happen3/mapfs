@@ -321,12 +321,13 @@ class MapFSInterface:
     def SwitchToTargetCmd(target):
         subprocess.call(['bash', '-c', f'cd {target} && clear && exec bash'])
 
-mfs = MapFS([], "fs")
-print(mfs.version())
-data = mfs.ReadFile("fs", "block/fs")
-MapFSInterface.extract(data, mfs, "fs")
-input("press enter")
-mfs.Open()
-MapFSInterface.MountVD(mfs, '/media/nah/MAPFS', 'fs')
-#MapFSInterface.SwitchToTargetCmd('/media/nah/MAPFS')
-MapFSInterface.UnmountVD(mfs, '/media/nah/MAPFS')
+if __name__ == "__main":
+    mfs = MapFS([], "fs")
+    print(mfs.version())
+    data = mfs.ReadFile("fs", "block/fs")
+    MapFSInterface.extract(data, mfs, "fs")
+    input("press enter")
+    mfs.Open()
+    MapFSInterface.MountVD(mfs, '/media/nah/MAPFS', 'fs')
+    #MapFSInterface.SwitchToTargetCmd('/media/nah/MAPFS')
+    MapFSInterface.UnmountVD(mfs, '/media/nah/MAPFS')
