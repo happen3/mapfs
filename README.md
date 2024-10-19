@@ -40,7 +40,7 @@ file_name: **The file name you refer**\
 | Error Checking      | zlib exceptions | checkJournal                       | checkJournal             | checkJournal (v2)     | checkJournal (v2)        | checkJournal (v2)                 |
 | Mounting            | extract-only    | X                                  | X                        | X                     | X                        | X                                 |
 | Cross-Compatibility | Windows, Linux  | Linux                              | Linux                    | Linux                 | Linux                    | Linux                             |
-| Metadata            |                 |                                    |                          |                       | ~ (file size)            | X                                 |
+| Metadata            |                 |                                    |                          |                       | ~ (creation date)            | X                                 |
 | API                 |                 |                                    |                          |                       |                          | X                                 |
 | Files Spec          | .chain, .mfhd   | block/fs (eg. block/example_drive) | block/fs                 | block/fs              | block/fs                 | block/fs                          |
 | Encryption          |                 |                                    |                          | (preliminary for 2.4) | experimental (file only) | mfs3 w/ EFSM (encrypting FS mode) |
