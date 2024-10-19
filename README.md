@@ -28,3 +28,7 @@ Decoding: zlib -> lzma -> data (bytes-string) -> data (bytearray)
 file_name: **The file name you refer**\
 0: **Start offset**\
 2: **End offset**
+
+## Why linux only?
+
+Mainly personal preferences.
