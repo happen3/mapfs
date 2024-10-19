@@ -2,7 +2,4 @@ block/*
 fs/*
 *.mfhd
 *.chain
-stat/build/*
-stat/*.so
-*.so
 .vscode
