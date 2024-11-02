@@ -5,6 +5,7 @@ import ast
 import os
 import struct
 import shutil
+import time
 import lzma
 import zlib
 
@@ -243,7 +244,7 @@ class MapFS:
                 print(f"File: {o[0]}")
                 print(f"Data: {''.join([chr(c) for c in file_data])}")  # Decode to string, handling errors
             else:
-                a.append(''.join([chr(c) for c in file_data]))
+                a.append(bytes([c for c in file_data]))
         if not echo:
             return [f[0] for f in fMap], a
     
@@ -301,7 +302,7 @@ class MapFSInterface:
         for fi, fo in enumerate(files):
             #print(fo[0])
             if os.path.dirname(fo[0]) != '': os.makedirs(os.path.dirname(fo[0]), exist_ok=True)
-            with open(f"{fo[0]}", "w") as f:
+            with open(f"{fo[0]}", "wb") as f:
                 f.write(od[fi])
         os.chdir(prev_pos) 
 

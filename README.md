@@ -20,14 +20,15 @@ Decoding: zlib -> lzma -> data (bytes-string) -> data (bytearray)
 **Chain specification:**
 ```python
 [
-  ("file_name", 0, 2) # (file_name, start_off, end_off)
+  ("file_name", 0, 2, "1970-01-01 00:00:00 GMT") # (file_name, start_off, end_off, mod_date)
   ...
 ]
 ```
 \
 file_name: **The file name you refer**\
 0: **Start offset**\
-2: **End offset**
+2: **End offset**\
+mod_date: **Modification date**\
 
 ## Future roadmap
 
@@ -43,8 +44,10 @@ file_name: **The file name you refer**\
 | Metadata            |                 |                                    |                          |                       | ~ (creation date)            | X                                 |
 | API                 |                 |                                    |                          |                       |                          | X                                 |
 | Files Spec          | .chain, .mfhd   | block/fs (eg. block/example_drive) | block/fs                 | block/fs              | block/fs                 | block/fs                          |
-| Encryption          |                 |                                    |                          | (preliminary for 2.4) | experimental (file only) | mfs3 w/ EFSM (encrypting FS mode) |
 
 ## Why linux only?
 
-Mainly personal preferences.
+Mainly personal preferences.\
+And also because Windows has vastly different structures,\
+as MapFS grows, it will be harder and harder for me to keep up if I include Windows in that.\
+Nevertheless, you can try, maybe it'll work maybe it'll not.
