@@ -1,3 +1,4 @@
+import sys
 import itertools
 import pickle
 import subprocess
@@ -8,6 +9,7 @@ import shutil
 import time
 import lzma
 import zlib
+user_med = sys.argv[1]
 
 def extend_dict(dict1, dict2, fill_value=None):
     """
@@ -328,6 +330,6 @@ if __name__ == "__main__":
     data = mfs.ReadFile("fs", "block/fs")
     MapFSInterface.extract(data, mfs, "fs")
     mfs.Open()
-    MapFSInterface.MountVD(mfs, '/media/nah/MAPFS', 'fs')
-    MapFSInterface.SwitchToTargetCmd('/media/nah/MAPFS')
-    MapFSInterface.UnmountVD(mfs, '/media/nah/MAPFS')
+    MapFSInterface.MountVD(mfs, f'/media/{user_med}/MAPFS', 'fs')
+    MapFSInterface.SwitchToTargetCmd(f'/media/{user_med/MAPFS}')
+    MapFSInterface.UnmountVD(mfs, f'/media/{user_med}/MAPFS')
